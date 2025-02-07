@@ -129,19 +129,43 @@
   }
   
   #restart {
+    /* Positioning and Layout */
     position: absolute;
-    bottom: 20px;
+    bottom: 30px;
     left: 50%;
-    padding: 12px 25px;
-    font-size: 18px;
-    background-color: #FF5722;
+    transform: translateX(-50%);
+    
+    /* Enhanced Sizing */
+    padding: 15px 35px;
+    font-size: 20px;
+    
+    /* Advanced Color Scheme */
+    background: linear-gradient(145deg, #FF5722, #E64A19);
     color: white;
+    
+    /* Sophisticated Border and Radius */
     border: none;
-    border-radius: 8px;
+    border-radius: 12px;
+    outline: none;
+    
+    /* Interactive Elements */
     cursor: pointer;
-    margin-right:15px;
-    transition: transform 0.2s, background-color 0.3s;
-  }
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    
+    /* Advanced Transitions */
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+#restart:hover {
+    transform: translateX(-50%) scale(1.05) rotate(2deg);
+    background: linear-gradient(145deg, #E64A19, #FF5722);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+#restart:active {
+    transform: translateX(-50%) scale(0.95);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
   
   #restart:hover {
     background-color: #E64A19;
