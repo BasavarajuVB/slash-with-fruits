@@ -9,16 +9,30 @@ const instructionsPopup = document.createElement('div');
 // Setup instructions popup
 instructionsPopup.id = 'instructions';
 instructionsPopup.innerHTML = `
-    <div class="popup-content">
+  <div class="popup-content">
+    <div class="popup-header">
         <h2>Fruit Ninja Instructions</h2>
-        <p>Slice fruits by swiping across them!</p>
-        <p>🍎 = 1 point<br>
-           🍊 = 3 points<br>
-           🍇 = 5 points<br>
-           🍓 = 5 points<br>
-           💣 = -5 points</p>
-        <button id="startBtn">OK, Let's Play!</button>
     </div>
+    <div class="popup-body">
+        <div class="instruction-main">
+            <div class="swipe-icon">👉</div>
+            <p>Slice fruits by swiping across them!</p>
+        </div>
+        <div class="scoring-section">
+            <h3>Scoring:</h3>
+            <div class="score-grid">
+                <div class="score-item">🍎 <span>+1 point</span></div>
+                <div class="score-item">🍊 <span>+3 points</span></div>
+                <div class="score-item">🍇 <span>+5 points</span></div>
+                <div class="score-item">🍓 <span>+5 points</span></div>
+                <div class="score-item">💣 <span>-5 points</span></div>
+            </div>
+        </div>
+    </div>
+    <div class="popup-footer">
+        <button id="startBtn" class="game-button">OK, Let's Play!</button>
+    </div>
+</div>
 `;
 document.body.appendChild(instructionsPopup);
 
@@ -158,7 +172,7 @@ class Fruit {
         for (let i = 0; i < 30; i++) {
             particles.push(new ShineParticle(
                 this.x + this.size/2,
-                this.y + this.size/2
+                this.y + this.size/6
             ));
         }
         return particles;
